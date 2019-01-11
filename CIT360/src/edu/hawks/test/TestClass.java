@@ -7,7 +7,7 @@ package edu.hawks.test;
 
 /**
  *
- * @author jhawk
+ * @author Jeremy Hawks
  */
 public class TestClass {
 
