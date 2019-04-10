@@ -1,0 +1,22 @@
+public static String GetSource(String url){
+String results = "";
+try{
+  URL SourceCode = new URL(url);
+  URLConnection connect = SourceCode.openConnection();
+  connect.setRequestProperty("Host", "www.someserver.com");
+  connect.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0");
+  connect.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+  connect.setRequestProperty("Accept-Charset", "ISO-8859-1,utf-8;q=0.7,*;q=0.7");
+  connect.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+  connect.setRequestProperty("Keep-Alive", "115");
+  connect.setRequestProperty("Connection", "keep-alive");
+  BufferedReader in = new BufferedReader(new InputStreamReader(connect.getInputStream(), "UTF-8"));
+  String inputLine;
+  while ((inputLine = in.readLine()) != null){
+    results += inputLine;
+  }
+  return results;
+}catch(Exception e){
+}
+return results;
+}

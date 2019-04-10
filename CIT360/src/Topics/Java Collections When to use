@@ -1,0 +1,14 @@
+While there are several different types of Java Collections, they each have specific instances of strength and weakness depending on the scenario.  The following shows different circumstances in which it would either prove to be beneficial or decremental to use Map, list, and Set Java Collection types.
+
+Set 
+	Hashset, used with fast and small memory usage for a specific application, and when you don't need to order the results
+	LinkedHashSet, similar to hashset but also has linked list to be able to associate the elements in a specific insertion order.
+	TreeSet, These sets are ordered by a comparator. These are very different from hashsets, and are for slow and large memory usage.
+	EnumSet, This is very fast and efficient, but only deals with a single enum type.  So use where possible. 
+List
+	ArrayList, This is a simple list that is backed by an array. When the list size changes, the array is recreated. It is fast and efficient. So if a list you are using in your application is dynamic or changing, it is ideal to use an arrayList.
+	LinkedList, this list is not back by an array like the arraylist, but instead it is backed by objects.  To be able to access the elements in this list, you start at either the first element, or the last, and then iterate through until you get what you need.  This is good to use because it is simple and can be fast, but depending on the size of the list, it might not be the best idea.
+Map
+	Hashmap, is a map where keys are unordered and it follows a hashtable.  
+	LinkedHashMap has the keys ordered by insertion order, which can make it easy to locate specific elements.
+	Treemaps are ordered by a comparator. These are good because it is an efficient way to be able to sort through objects. 

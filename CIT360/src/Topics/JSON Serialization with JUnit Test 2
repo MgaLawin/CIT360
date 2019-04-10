@@ -1,0 +1,34 @@
+public abstract class PrimaryModel extends Observable implements Serializable{
+    protected void notifyModelChange()
+    {
+        setChanged();
+        notifyObservers();
+    }
+
+    public String serialize() throws IOException
+    {
+        ObjectOutputStream objOutStream = null;
+        ByteArrayOutputStream bytArrOutStream = null;
+        try
+        {
+            bytArrOutStream = new ByteArrayOutputStream();
+            objOutStream = new ObjectOutputStream(bytArrOutStream);
+            objOutStream.writeObject(this);
+        }
+        finally
+        {
+            String main = new String(bytArrOutStream.toByteArray());
+            objOutStream.close();
+            bytArrOutStream.close();
+            return main;
+        }
+    }
+
+    public static PrimaryModel deserialize(String data) throws IOException, ClassNotFoundException
+    {
+        ObjectInputStream objInputStream = new ObjectInputStream(new ByteArrayInputStream(data.getBytes()));
+        PrimaryModel obj  = (PrimaryModel) objInputStream.readObject();
+        objInputStream.close();
+        return obj;
+    }
+  }

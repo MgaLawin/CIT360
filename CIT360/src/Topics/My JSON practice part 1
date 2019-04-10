@@ -1,0 +1,22 @@
+ {"GetAddress": {
+   "MESSAGE_TEXT_LONG": "Success",
+   "RETURN_CODE": 0,
+     "GetAddressSub":    {
+      "SAVED": "N",
+      "ID": "023438",
+      "ADDRESS":       [
+                  {
+            "ADDRESS1": "123 ABC St",
+            "ADDRESS2": "",
+            "ADDRESSLONG": "123 ABC St \nSalt Lake City, UT \nSalt Lake ",
+            "ADDRESS_TYPE": "HOME",
+            "CITY": "Salt Lake City",
+            "COUNTRY": "USA",
+            "COUNTY": "Salt Lake",
+            "EFFDT": "2015-09-23",
+            "ID": "023438",
+            "POSTAL": "",
+            "STATE": "UT"
+         },
+      ]
+   }

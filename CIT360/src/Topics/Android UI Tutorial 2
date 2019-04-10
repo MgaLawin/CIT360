@@ -1,0 +1,24 @@
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // setContentView(R.layout.main);
+
+    TextView label = new TextView(this);
+    label.setText(R.string.my_text_label);
+    label.setTextSize(20);
+    label.setGravity(Gravity.CENTER_HORIZONTAL);
+
+    ImageView pic = new ImageView(this);
+    pic.setImageResource(R.drawable.matterhorn);
+    pic.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+    pic.setAdjustViewBounds(true);
+    pic.setScaleType(ScaleType.FIT_XY);
+    pic.setMaxHeight(250);
+    pic.setMaxWidth(250);
+    LinearLayout ll = new LinearLayout(this);
+    ll.setOrientation(LinearLayout.VERTICAL);
+    ll.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+    ll.setGravity(Gravity.CENTER);
+    ll.addView(label);
+    ll.addView(pic);
+    setContentView(ll);
+}

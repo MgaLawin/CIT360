@@ -1,0 +1,25 @@
+public static TeamModel ReturnJSONasTeamModel(string data)
+        {
+            MVC.Models.TimeEntryWidget.TeamModel TeamModel = new TeamModel();
+            try
+            {
+
+                MVC.Models.TimeEntryWidget.TeamModel.RootObjectManager deserializedStatementsByUser  =
+                    JsonConvert.DeserializeObject<MVC.Models.TimeEntryWidget.TeamModel.RootObjectManager>(data, new TeamObjectConverter());
+
+                TeamModel.dataExists = 0;
+                if (deserializedStatementsByUser.GridDetailsDoc.C_RESPONSE != null && deserializedStatementsByUser.GridDetailsDoc.C_RESPONSE.RETURN_CD == 0)
+                {
+                    TeamModel.GridDetailsDoc = deserializedStatementsByUser.GridDetailsDoc;
+                    TeamModel.dataExists = 1;
+                }
+
+                
+            }
+            catch (Exception e)
+            {
+                string s = e.StackTrace;
+            }
+            
+            return TeamModel;
+        }
